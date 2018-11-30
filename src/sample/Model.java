@@ -2,7 +2,11 @@ package sample;
 
 public interface Model {
 
-    int descriptionText();
-  //void next();
-  //void previous();
+    String descriptionTeam();
+    int descriptionCOMB();
+    int descriptionFF();
+    int descriptionINT();
+    int descriptionSack();
+    void next();
+    void previous();
 }
