@@ -2,23 +2,23 @@ package sample;
 
 public class YearStats {
 
-    private int COMB;
-    private int FF;
-    private int INT;
-    private float Sack;
+    private String COMB;
+    private String FF;
+    private String INT;
+    private String Sack;
     private String Team;
-    private int Year;
+    private String Year;
 
     //Constructor
     YearStats(String BrianDawkinsAllData) {
 
         String[] parts = BrianDawkinsAllData.split("\\t+", 10);
-        COMB = Integer.parseInt(parts[3]);
-        FF = Integer.parseInt(parts[7]);
-        INT = Integer.parseInt(parts[10]);
-        Sack = Float.parseFloat(parts[6]);
+        COMB = parts[3];
+        FF = parts[7];
+        INT = parts[10];
+        Sack = parts[6];
         Team = parts[1];
-        Year = Integer.parseInt(parts[0]);
+        Year = parts[0];
     }
 
     //Methods
