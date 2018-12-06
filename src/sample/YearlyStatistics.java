@@ -31,7 +31,6 @@ class YearlyStatistics implements Model {
 
     //Methods
     public void next() {
-        // increment current to point to next
         if (current < football.size() - 1) {
             current = current + 1;
         } else {
@@ -40,7 +39,6 @@ class YearlyStatistics implements Model {
     }
 
     public void previous() {
-        // increment current to point to previous
         if (current > 0) {
             current = current - 1;
         } else {
