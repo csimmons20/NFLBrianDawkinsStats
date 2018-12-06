@@ -11,5 +11,5 @@ public interface Model {
     void previous();
     int CBchoice = 0;
 
-    default int getCBchoice() {return CBchoice};
+    default int getCBchoice() {return CBchoice;}
 }
