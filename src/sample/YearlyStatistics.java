@@ -50,9 +50,18 @@ class YearlyStatistics implements Model {
         return football.get(1).description();
     }
 
-    public String description {
+    public String descriptionCOMB() {
         return football.get(3).description();
     }
 
-    public String
+    public String descriptionFF() {
+        return football.get(7).description();
+    }
+
+    public String descriptionINT() {
+        return football.get(10).description();
+    }
+    public String descriptionSack() {
+        return football.get(6).description();
+    }
 }
