@@ -4,7 +4,7 @@ public interface Model {
 
     String descriptionTeam();
     int descriptionCOMB();
-    int descriptionFFF();
+    int descriptionFF();
     int descriptionINT();
     int descriptionSack();
     void next();

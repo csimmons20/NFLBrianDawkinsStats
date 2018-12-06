@@ -1,23 +1,60 @@
 package sample;
 
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import javax.naming.Context;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.ArrayList;
 
-public class YearlyStatistics extends Application {
+class YearlyStatistics implements Model {
 
-    @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
-        primaryStage.show();
+    //Fields
+    private ArrayList<YearStats> football;
+    private int current;
+
+    //Constructor
+    YearlyStatistics(Context context) {
+        current = 0;
+        football = new ArrayList();
+
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new FileReader("BrianDawkinsAllData"));
+            String nextLine;
+            while ((nextLine = bufferedReader.readLine()) != null) {
+                football.add(new YearStats(nextLine));
+            }
+            bufferedReader.close();
+        } catch (Exception e) {
+            System.out.println("YearStats() reading data threw exception:");
+            e.printStackTrace();
+        }
     }
 
-
-    public static void main(String[] args) {
-        launch(args);
+    //Methods
+    public void next() {
+        // increment current to point to next
+        if (current < football.size() - 1) {
+            current = current + 1;
+        } else {
+            current = 0;
+        }
     }
+
+    public void previous() {
+        // increment current to point to previous
+        if (current > 0) {
+            current = current - 1;
+        } else {
+            current = football.size() - 1;
+        }
+    }
+
+    public String descriptionTeam() {
+        return football.get(1).description();
+    }
+
+    public String description {
+        return football.get(3).description();
+    }
+
+    public String
 }
