@@ -9,4 +9,7 @@ public interface Model {
     int descriptionSack();
     void next();
     void previous();
+    int CBchoice = 0;
+
+    default int getCBchoice() {return CBchoice};
 }
