@@ -7,10 +7,9 @@ package sample;
 
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import org.w3c.dom.Text;
+
 
 
 import java.awt.*;
@@ -18,10 +17,14 @@ import java.util.ArrayList;
 
 public class Controller {
 
-public ListView Stats;
-public ImageView ImageofPlayer;
+
+public ImageView Player;
 public ImageView TeamLogo;
 public ChoiceBox CBY;
+public Label TextViewFF;
+public Label TextViewCOMB;
+public Label TextViewINT;
+public Label TextViewSack;
 
  Model ourModel;
 
