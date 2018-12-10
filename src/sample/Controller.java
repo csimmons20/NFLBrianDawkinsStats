@@ -33,7 +33,7 @@ public Label sackEdit;
    public void initialize() throws Exception {
         System.out.println("Controller initialize");
 
-       //create Philadelphia's logo
+       //create Philadelphia's logos
        FileInputStream input = new FileInputStream("src/sample/PhillyEagles.png");
        Image philly = new Image(input);
 
