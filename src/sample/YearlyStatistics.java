@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 class YearlyStatistics implements Model {
 
+
     //Fields
     private ArrayList<YearStats> football;
     private int current;
