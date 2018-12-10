@@ -13,12 +13,12 @@ class YearlyStatistics implements Model {
     private int current;
 
     //Constructor
-    YearlyStatistics(Context context) {
+    YearlyStatistics() {
         current = 0;
         football = new ArrayList();
 
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader("BrianDawkinsAllData"));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader("/Users/ericgorski/Desktop/NFLBrianDawkinsStats/src/sample/BrianDawkinsAllData"));
             String nextLine;
             while ((nextLine = bufferedReader.readLine()) != null) {
                 football.add(new YearStats(nextLine));
