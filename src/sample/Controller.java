@@ -31,6 +31,9 @@ public Label sackEdit;
  Model ourModel;
 
    public void initialize() throws Exception {
+
+       ourModel = new YearlyStatistics();
+
         System.out.println("Controller initialize");
 
        //create Philadelphia's logos
