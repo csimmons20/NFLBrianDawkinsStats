@@ -30,7 +30,7 @@ public Label sackEdit;
 
    public void initialize() {
         System.out.println("Controller initialize");
-
+       ourModel = new YearlyStatistics();
 
 
         UserSelects.setValue(ourModel.getCBchoice());
