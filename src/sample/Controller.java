@@ -13,6 +13,8 @@ import javafx.scene.image.ImageView;
 
 
 import java.awt.*;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class Controller {
@@ -28,9 +30,21 @@ public Label sackEdit;
 
  Model ourModel;
 
-   public void initialize() {
+   public void initialize() throws Exception {
         System.out.println("Controller initialize");
 
+       //create Philadelphia's logos
+       FileInputStream input = new FileInputStream("src/sample/PhillyEagles.png");
+       Image philly = new Image(input);
+
+       //create Denver's logo
+       FileInputStream inny = new FileInputStream("src/sample/DenverBroncos.png");
+       Image denvor = new Image(inny);
+
+       //create ImageView that'll change team logo
+       ImageView theTeamLogo = new ImageView(philly);
+       theTeamLogo.setFitHeight(500);
+       theTeamLogo.setFitWidth(500);
 
 
         UserSelects.setValue(ourModel.getCBchoice());
@@ -40,61 +54,84 @@ public Label sackEdit;
                    System.out.println("choice box action happened");
 
                    if (UserSelects.valueProperty().get().equals("1996")) {
+
                        System.out.println("1996 action happened");
+                       theTeamLogo.setImage(philly);
                    }
            if (UserSelects.valueProperty().get().equals("1997")) {
-               System.out.println("1997 action happened");
 
+               System.out.println("1997 action happened");
+               theTeamLogo.setImage(philly);
            }
            if (UserSelects.valueProperty().get().equals("1998")) {
-               System.out.println("1998 action happened");
 
+               System.out.println("1998 action happened");
+               theTeamLogo.setImage(philly);
            }
            if (UserSelects.valueProperty().get().equals("1999")) {
-               System.out.println("1999 action happened");
 
+               System.out.println("1999 action happened");
+               theTeamLogo.setImage(philly);
            }
            if (UserSelects.valueProperty().get().equals("2000")) {
-               System.out.println("2000 action happened");
 
+               System.out.println("2000 action happened");
+               theTeamLogo.setImage(philly);
            }
            if (UserSelects.valueProperty().get().equals("2001")) {
-               System.out.println("2001 action happened");
 
+               System.out.println("2001 action happened");
+               theTeamLogo.setImage(philly);
            }
            if (UserSelects.valueProperty().get().equals("2002")) {
-               System.out.println("2002 action happened");
 
+               System.out.println("2002 action happened");
+               theTeamLogo.setImage(philly);
            }
            if (UserSelects.valueProperty().get().equals("2003")) {
-               System.out.println("2003 action happened");
 
+               System.out.println("2003 action happened");
+               theTeamLogo.setImage(philly);
            }
            if (UserSelects.valueProperty().get().equals("2004")) {
-               System.out.println("2004 action happened");
 
+               System.out.println("2004 action happened");
+               theTeamLogo.setImage(philly);
            }
            if (UserSelects.valueProperty().get().equals("2005")) {
-               System.out.println("1996 action happened");
 
-           }if (UserSelects.valueProperty().get().equals("2006")) {
                System.out.println("1996 action happened");
+               theTeamLogo.setImage(philly);
+           }
+           if (UserSelects.valueProperty().get().equals("2006")) {
 
-           }if (UserSelects.valueProperty().get().equals("2007")) {
                System.out.println("1996 action happened");
+               theTeamLogo.setImage(philly);
+           }
+           if (UserSelects.valueProperty().get().equals("2007")) {
 
-           }if (UserSelects.valueProperty().get().equals("2008")) {
                System.out.println("1996 action happened");
+               theTeamLogo.setImage(philly);
+           }
+           if (UserSelects.valueProperty().get().equals("2008")) {
 
-           }if (UserSelects.valueProperty().get().equals("2009")) {
                System.out.println("1996 action happened");
+               theTeamLogo.setImage(philly);
+           }
+           if (UserSelects.valueProperty().get().equals("2009")) {
 
-           }if (UserSelects.valueProperty().get().equals("2010")) {
                System.out.println("1996 action happened");
+               theTeamLogo.setImage(denvor);
+           }
+           if (UserSelects.valueProperty().get().equals("2010")) {
 
-           }if (UserSelects.valueProperty().get().equals("2011")) {
                System.out.println("1996 action happened");
+               theTeamLogo.setImage(denvor);
+           }
+           if (UserSelects.valueProperty().get().equals("2011")) {
 
+               System.out.println("1996 action happened");
+               theTeamLogo.setImage(denvor);
            }
                }
 
