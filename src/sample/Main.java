@@ -13,8 +13,8 @@ public class Main extends Application {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
             Parent root = loader.load();
 
-            Controller controller = loader.getController();
-            primaryStage.setOnHidden(e -> controller.initialize());
+            /*Controller controller = loader.getController();
+            primaryStage.setOnHidden(e -> controller.initialize());*/
 
             primaryStage.setTitle("BrianDawkins");
             primaryStage.setScene(new Scene(root, 700, 600));
