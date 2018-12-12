@@ -1,8 +1,11 @@
 package sample;
 
+import javafx.scene.control.ChoiceBox;
+
 import javax.naming.Context;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.time.Year;
 import java.util.ArrayList;
 
 class YearlyStatistics implements Model {
@@ -10,10 +13,13 @@ class YearlyStatistics implements Model {
 
     //Fields
     private ArrayList<YearStats> football;
+    //private int firstYear;
     private int current;
+    public ChoiceBox UserSelects;
 
     //Constructor
     YearlyStatistics() {
+        //firstYear = 1996;
         current = 0;
         football = new ArrayList();
 
@@ -28,41 +34,59 @@ class YearlyStatistics implements Model {
             System.out.println("YearStats() reading data threw exception:");
             e.printStackTrace();
         }
+        System.out.println("current " + current);
     }
 
     //Methods
     public void next() {
-        if (current < football.size() - 1) {
-            current = current + 1;
-        } else {
+        Object value = UserSelects.getValue();
+
+        if (value.equals("1996")) {
             current = 0;
         }
+
+        if (value.equals("1997")) {
+            current = current + 1;
+        }
+
+        //System.out.println("current " + current);
     }
 
-    public void previous() {
-        if (current > 0) {
-            current = current - 1;
-        } else {
-            current = football.size() - 1;
+    /*public void previous() {
+        Object value = UserSelects.getValue();
+
+        if (value.equals("1996")) {
+            current = 0;
         }
-    }
+
+        if (!value.equals("1996")) {
+            current = current - 1;
+        }
+
+        System.out.println("current " + current);
+    }*/
 
     public String descriptionTeam() {
-        return football.get(1).description();
+        return football.get(current).TeamDescription();
     }
 
     public String descriptionCOMB() {
-        return football.get(3).description();
+        return football.get(current).COMBDescription();
     }
 
     public String descriptionFF() {
-        return football.get(7).description();
+        return football.get(current).FFDescription();
     }
 
     public String descriptionINT() {
-        return football.get(10).description();
+        return football.get(current).INTDescription();
     }
+
     public String descriptionSack() {
-        return football.get(6).description();
+        return football.get(current).SackDescription();
+    }
+
+    public String descriptionYear() {
+        return football.get(current).YearDescription();
     }
 }

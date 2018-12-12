@@ -22,7 +22,27 @@ public class YearStats {
     }
 //
     //Methods
-    String description() {
-        return "Year: " + Year + ", Team: " + Team + ", COMB: " + COMB + ", Sack: " + Sack + ", FF: " + FF + ", INT: " + INT;
+    String COMBDescription() {
+        return COMB;
+    }
+
+    String FFDescription() {
+        return FF;
+    }
+
+    String INTDescription() {
+        return INT;
+    }
+
+    String SackDescription() {
+        return Sack;
+    }
+
+    String TeamDescription() {
+        return Team;
+    }
+
+    String YearDescription() {
+        return Year;
     }
 }
