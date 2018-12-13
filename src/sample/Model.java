@@ -8,8 +8,7 @@ public interface Model {
     String descriptionINT();
     String descriptionSack();
     String descriptionYear();
-    void next();
-    //void previous();
+    void setYear(int year);
     int CBchoice = 0;
 
     default int getCBchoice() {return CBchoice;}

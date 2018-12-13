@@ -4,6 +4,7 @@ import javafx.scene.control.ChoiceBox;
 
 import javax.naming.Context;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.time.Year;
 import java.util.ArrayList;
@@ -20,11 +21,12 @@ class YearlyStatistics implements Model {
     //Constructor
     YearlyStatistics() {
         //firstYear = 1996;
-        current = 0;
         football = new ArrayList();
 
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader("/Desktop/NFLBrianDawkinsStats/src/sample/BrianDawkinsAllData"));
+            File savedText = new File(getClass().getResource("BrianDawkinsAllData").toURI());
+
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(savedText));
             String nextLine;
             while ((nextLine = bufferedReader.readLine()) != null) {
                 football.add(new YearStats(nextLine));
@@ -34,37 +36,12 @@ class YearlyStatistics implements Model {
             System.out.println("YearStats() reading data threw exception:");
             e.printStackTrace();
         }
-        System.out.println("current " + current);
     }
 
     //Methods
-    public void next() {
-        Object value = UserSelects.getValue();
-
-        if (value.equals("1996")) {
-            current = 0;
-        }
-
-        if (value.equals("1997")) {
-            current = current + 1;
-        }
-
-        //System.out.println("current " + current);
+    public void setYear(int year) {
+        current = year - 1996;
     }
-
-    /*public void previous() {
-        Object value = UserSelects.getValue();
-
-        if (value.equals("1996")) {
-            current = 0;
-        }
-
-        if (!value.equals("1996")) {
-            current = current - 1;
-        }
-
-        System.out.println("current " + current);
-    }*/
 
     public String descriptionTeam() {
         return football.get(current).TeamDescription();

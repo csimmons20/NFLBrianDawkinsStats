@@ -65,6 +65,8 @@ public Label sackEdit;
 
                System.out.println("1997 action happened");
                TeamLogo.setImage(philly);
+               ourModel.setYear(1997);
+               combEdit.setText(ourModel.descriptionCOMB());
 
            }
            if (UserSelects.valueProperty().get().equals("1998")) {
