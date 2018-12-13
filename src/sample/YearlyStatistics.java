@@ -24,7 +24,7 @@ class YearlyStatistics implements Model {
         football = new ArrayList();
 
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader("/Users/ericgorski/Desktop/NFLBrianDawkinsStats/src/sample/BrianDawkinsAllData"));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader("/Desktop/NFLBrianDawkinsStats/src/sample/BrianDawkinsAllData"));
             String nextLine;
             while ((nextLine = bufferedReader.readLine()) != null) {
                 football.add(new YearStats(nextLine));
