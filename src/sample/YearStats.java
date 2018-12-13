@@ -12,7 +12,7 @@ public class YearStats {
     //Constructor
     YearStats(String BrianDawkinsAllData) {
         System.out.println("YearStats() " + BrianDawkinsAllData);
-        String[] parts = BrianDawkinsAllData.split("\\t+", 11);
+        String[] parts = BrianDawkinsAllData.split("\\t+", 12);
         COMB = parts[3];
         FF = parts[7];
         INT = parts[10];
