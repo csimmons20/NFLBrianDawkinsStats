@@ -52,6 +52,7 @@ public Label sackEdit;
            if (playerChoices.valueProperty().get().equals("Brian Dawkins")) {
 
                UserSelects.setValue(ourModel.getCBchoice());
+               UserSelects.getItems().clear();
                UserSelects.getItems().addAll("1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003",
                        "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011");
                UserSelects.setOnAction(event-> {
@@ -239,6 +240,7 @@ public Label sackEdit;
            }
            if (playerChoices.valueProperty().get().equals("Kam Chancellor")) {
 
+               UserSelects.getItems().clear();
                UserSelects.getItems().addAll("2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017");
                UserSelects.setOnAction(event-> {
                    if (UserSelects.valueProperty().get().equals("2010")) {
